@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aircraft.Web", "Aircraft.Web\Aircraft.Web.csproj", "{FE2633AA-AF2C-4B1D-A667-4DF351BF2215}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Aircraft.Web.Core", "Aircraft.Web.Core\Aircraft.Web.Core.csproj", "{6FB487B3-1F77-47CA-A99B-3999FD1AE7D5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FE2633AA-AF2C-4B1D-A667-4DF351BF2215}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FE2633AA-AF2C-4B1D-A667-4DF351BF2215}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FE2633AA-AF2C-4B1D-A667-4DF351BF2215}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FE2633AA-AF2C-4B1D-A667-4DF351BF2215}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6FB487B3-1F77-47CA-A99B-3999FD1AE7D5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6FB487B3-1F77-47CA-A99B-3999FD1AE7D5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6FB487B3-1F77-47CA-A99B-3999FD1AE7D5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6FB487B3-1F77-47CA-A99B-3999FD1AE7D5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
