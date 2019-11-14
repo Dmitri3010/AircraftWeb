@@ -8,4 +8,12 @@
       <Folder Include="Controllers" />
     </ItemGroup>
 
+    <ItemGroup>
+      <ProjectReference Include="..\Aircraft.Web.Core\Aircraft.Web.Core.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Pushnovn.PN" Version="0.1.7.7" />
+    </ItemGroup>
+
 </Project>
