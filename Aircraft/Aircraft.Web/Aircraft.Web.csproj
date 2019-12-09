@@ -5,10 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Controllers" />
-    </ItemGroup>
-
-    <ItemGroup>
+      <ProjectReference Include="..\Aircraft.Web.Auth\Aircraft.Web.Auth.csproj" />
       <ProjectReference Include="..\Aircraft.Web.Core\Aircraft.Web.Core.csproj" />
     </ItemGroup>
 
