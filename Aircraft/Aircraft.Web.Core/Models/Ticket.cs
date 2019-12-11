@@ -27,5 +27,8 @@ namespace Aircraft.Web.Core.Models
         [JsonProperty(PropertyName = "fromCity")]
         public string FromCity { get; set; }
         
+        [JsonProperty(PropertyName = "cost")]
+        public double Cost { get; set; }
+        
     }
 }
