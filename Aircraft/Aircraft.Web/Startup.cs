@@ -1,3 +1,4 @@
+using Aircraft.Web.Core;
 using Aircraft.Web.Core.Db;
 using Aircraft.Web.Core.Helpers;
 using Aircraft.Web.Core.Tools;
@@ -18,7 +19,7 @@ namespace Aircraft.Web
             HostingEnvironment = env;
             Configuration = configuration;
         }
-        
+
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
@@ -38,6 +39,9 @@ namespace Aircraft.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+            AppSettings.ApplicationBuilder = app;
+            AppSettings.AuthTokenSecret = Config.Get("AuthTokenSecret");
+            
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -52,8 +56,5 @@ namespace Aircraft.Web
             app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
-        
-        
-
     }
 }
