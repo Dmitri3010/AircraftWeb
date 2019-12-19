@@ -25,7 +25,14 @@ namespace Aircraft.Web
             services.AddControllers();
             DBContext.ConnectionString = Config.GetConnectionString();
             SimpleRepository.SetDbContext(typeof(DBContext));
-            Initialaizer.CreateDb();
+            services.AddCors(options =>
+            {
+                options.AddPolicy("CorsPolicy",
+                    builder => builder.AllowAnyOrigin()
+                        .AllowAnyMethod()
+                        .AllowAnyHeader());
+            });
+//            Initialaizer.CreateDb();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -42,7 +49,11 @@ namespace Aircraft.Web
 
             app.UseAuthorization();
 
+            app.UseCors("CorsPolicy");
             app.UseEndpoints(endpoints => { endpoints.MapControllers(); });
         }
+        
+        
+
     }
 }

@@ -239,22 +239,22 @@ function checkNavbar() {
 /* Ajax Contact Form */
 function initContactForm() { 
 
-	var formEl = $('.form-validate');
+	// var formEl = $('.form-validate');
 
-	formEl.validate({
+	// formEl.validate({
 
-		submitHandler: function(form) {
+	// 	submitHandler: function(form) {
 
-			var queryString = $(formEl).serialize(); 
-			$.post('_ajax_send.php', queryString, function(answer) {
+	// 		var queryString = $(formEl).serialize(); 
+	// 		// $.post('_ajax_send.php', queryString, function(answer) {
 
-				if (answer) {
+	// 		// 	if (answer) {
 
-					formEl.html('<div class="warning">' + answer + '</div>');
-				}	
-			}); 
-		}
-	});
+	// 		// 		formEl.html('<div class="warning">' + answer + '</div>');
+	// 		// 	}	
+	// 		// }); 
+	// 	}
+	// });
 }
 
 /* Google maps init */

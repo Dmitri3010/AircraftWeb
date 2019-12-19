@@ -3,6 +3,7 @@ using Aircraft.Web.Auth;
 using Aircraft.Web.Core;
 using Aircraft.Web.Core.Models;
 using Aircraft.Web.Core.Models.Enums;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using PN.Storage.EF;
@@ -57,7 +58,7 @@ namespace Aircraft.Web.Controllers
         }
 
         [HttpPost("Register")]
-        public ActionResult Register([FromBody] User model)
+        public ActionResult Register([FromBody]User model)
         {
             if (Guid.Empty != model.Id)
             {
@@ -91,5 +92,11 @@ namespace Aircraft.Web.Controllers
 
             return Ok();
         }
+
+//        [HttpOptions("Register")]
+//        public ActionResult Options()
+//        {
+//            return Ok();
+//        }
     }
 }
