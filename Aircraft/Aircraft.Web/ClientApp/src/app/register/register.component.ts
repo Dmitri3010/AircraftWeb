@@ -38,11 +38,6 @@ export class RegisterComponent implements OnInit {
 
   registration() {
 
-    console.log(this.registerForm.value);
-    // var formData = new formData();
-    // formData.append("login", this.registerForm.get("login").value);
-    // formData.append("password", this.registerForm.get("password").value);
-    // formData.append("email", this.registerForm.get("email").value);
     var user = new User();
     user.email= this.registerForm.get("email").value;
     user.login = this.registerForm.get("password").value;

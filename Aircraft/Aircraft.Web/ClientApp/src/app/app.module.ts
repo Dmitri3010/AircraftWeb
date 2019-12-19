@@ -10,6 +10,7 @@ import { RegisterComponent } from './register/register.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { registerService } from './register/register.service';
 import { HttpClientModule } from '@angular/common/http'; 
+import {authService} from './auth/auth.service';
 
 @NgModule({
   imports: [
@@ -26,7 +27,7 @@ import { HttpClientModule } from '@angular/common/http';
     RegisterComponent,
   ],
 
-  providers: [registerService],
+  providers: [registerService,authService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

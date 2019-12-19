@@ -71,7 +71,7 @@ namespace Aircraft.Web.Controllers
             }
 
             if (string.IsNullOrWhiteSpace(model.Login) || string.IsNullOrWhiteSpace(model.Password) ||
-                string.IsNullOrWhiteSpace(model.FirstName))
+                string.IsNullOrWhiteSpace(model.Email))
             {
                 return BadRequest("login or password or name empty");
             }
