@@ -13,6 +13,7 @@
   <link href="assets/css/swipebox.css" rel="stylesheet">
   <link href="assets/css/zoomslider.css" rel="stylesheet">
   <link href="assets/css/style.css?04" rel="stylesheet">
+  <link href="assets/css/style.css?03" rel="stylesheet">
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
   <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed:700,800%7COpen+Sans:400,600,700"
@@ -22,7 +23,7 @@
 </head>
 
 <body>
-  <div id="homepage-block-1" class="bgMove" style="background-image: url(assets/images/_homepage-1-bg.jpg);">
+  <div id="homepage-block-1" class="bgMove" style="background-image: url(assets/images/sky.jpg);">
 
     <div class="nav-wrapper" id="nav-wrapper">
       <nav class="navbar navbar-static">
@@ -44,41 +45,11 @@
               <span class="icon-bar bottom-bar"></span>
             </button>
             <ul class="nav navbar-nav">
-              <li class="hasSub current_page_item">
-                <a href="#">Home</a>
-                <ul class="sub-menu">
-                  <li class="current_page_item"><a href="index.html">Homepage 1</a></li>
-                  <li><a href="homepage-2.html">Homepage 2</a></li>
-                  <li><a href="homepage-3.html">Homepage 3</a></li>
-                </ul>
-              </li>
-              <li><a href="get_taxi.html">Get Taxi</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li class="hasSub">
-                <a href="#">Our blog</a>
-                <ul class="sub-menu">
-                  <li><a href="blog.html">Classic Blog</a></li>
-                  <li><a href="blog-3.html">Blog without Sidebar</a></li>
-                  <li><a href="post.html">Blog Post</a></li>
-                </ul>
-              </li>
-              <li class="hasSub">
-                <a href="#">Gallery</a>
-                <ul class="sub-menu">
-                  <li><a href="gallery-2.html">Gallery 2-columns</a></li>
-                  <li><a href="gallery-3.html">Gallery 3-columns</a></li>
-                  <li><a href="gallery-4.html">Gallery 4-columns</a></li>
-                </ul>
-              </li>
-              <li><a href="testimonials.html">Testimonials</a></li>
+              
+              <li><a href="#buyTicketForm">Buy ticket</a></li>
+              <li><a href="services.html">Hot price</a></li>
+              <li><a href="/auth">Log In</a></li>
               <li><a href="contacts.html">Contacts</a></li>
-              <li class="hasSub">
-                <a href="#">Pages</a>
-                <ul class="sub-menu">
-                  <li><a href="typo.html">Typography</a></li>
-                  <li><a href="shortcodes.html">Shortcodes</a></li>
-                </ul>
-              </li>
             </ul>
           </div>
         </div>
@@ -87,56 +58,34 @@
 
     <app-root></app-root>
     <section id="block-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col-ms-6">
-                    <h4>About us</h4>
-                    <p>Nullam orci dui, dictum et magna sollicitudin, tempor blandit erat. Maecenas suscipit tellus sit amet
-                        augue placerat fringilla a id lacus. Fusce tincidunt in leo lacinia condimentum. </p>
-    
-                    <div class="social-small social-yellow">
-                        <a href="#" class="fa fa-twitter"></a>
-                        <a href="#" class="fa fa-facebook"></a>
-                        <a href="#" class="fa fa-instagram"></a>
-                        <a href="#" class="fa fa-google-plus"></a>
-                        <a href="#" class="fa fa-pinterest"></a>
-                    </div>
-                </div>
-                <div class="col-lg-5 col-md-5 hidden-md hidden-sm hidden-xs hidden-ms">
-                    <h4>Explore</h4>
-                    <div class="row">
-                        <div class="col-md-5">
-                            <ul class="nav navbar-nav">
-                                <li class="active"><a href="#">Get Taxi</a></li>
-                                <li><a href="#">Services</a></li>
-                                <li><a href="#">Tariffs</a></li>
-                                <li><a href="#">Application</a></li>
-    
-                            </ul>
-                        </div>
-                        <div class="col-md-5">
-                            <ul class="nav navbar-nav">
-                                <li><a href="#">Become a driver</a></li>
-                                <li><a href="#">Testimonials</a></li>
-                                <li><a href="#">Contacts</a></li>
-                                <li><a href="#">Pages</a></li>
-                            </ul>
-                        </div>
-                    </div>
-    
-                </div>
-                <div class="col-lg-3 col-md-6 col-sm-6 col-ms-6">
-                    <h4>Contact us</h4>
-                    <p><span class="yellow">Address:</span> 43 2-nd Avenue, New York, NY 29004-7153</p>
-    
-                    <ul class="address">
-                        <li><span class="fa fa-phone"></span>800-5-800</li>
-                        <li><span class="fa fa-envelope"></span><a href="#">gettaxi@taxipark.co.uk</a></li>
-                        <li><span class="fa fa-skype"></span>gettaxipark</li>
-                    </ul>
-                </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12 col-ms-6">
+            <h4>About us</h4>
+            <p>Nullam orci dui, dictum et magna sollicitudin, tempor blandit erat. Maecenas suscipit tellus sit amet
+              augue placerat fringilla a id lacus. Fusce tincidunt in leo lacinia condimentum. </p>
+
+            <div class="social-small social-yellow">
+              <a href="#" class="fa fa-twitter"></a>
+              <a href="#" class="fa fa-facebook"></a>
+              <a href="#" class="fa fa-instagram"></a>
+              <a href="#" class="fa fa-google-plus"></a>
+              <a href="#" class="fa fa-pinterest"></a>
             </div>
+          </div>
+          
+          <div class="col-lg-3 col-md-6 col-sm-6 col-ms-6">
+            <h4>Contact us</h4>
+            <p><span class="yellow">Address:</span> 43 2-nd Avenue, New York, NY 29004-7153</p>
+
+            <ul class="address">
+              <li><span class="fa fa-phone"></span>800-5-800</li>
+              <li><span class="fa fa-envelope"></span><a href="#">gettaxi@taxipark.co.uk</a></li>
+              <li><span class="fa fa-skype"></span>gettaxipark</li>
+            </ul>
+          </div>
         </div>
+      </div>
     </section>
     <footer>
       <div class="container">

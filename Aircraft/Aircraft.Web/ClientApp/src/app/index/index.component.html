@@ -2,16 +2,14 @@
     <div class="get-icon">
         <h4>Get Taxi Now</h4>
         <div class="phone">800-5-800</div>
-        <span class="fa fa-phone-square"></span>
     </div>
     <div id="large-image">
         <img style="max-width: 80%;" src="assets/images/airbus.png" class="car" alt="Taxi">
-        <img src="assets/images/_car-splash.png" class="splash" alt="Taxi">
     </div>
 </div>
 <div class="taxi-form-full">
     <div class="container">
-        <div class="form-validate">
+        <form class="form-validate" [formGroup]="findPlaneForm" id="buyTicketForm">
             <div class="menu-types">
                 <a href="#" data-value="Standart" class="type-1 active">Standart</a>
                 <a href="#" data-value="Business" class="type-2">Business</a>
@@ -47,7 +45,7 @@
             </div>
             <input type="submit" value="Get Taxi" class="btn btn-lg btn-red aligncenter">
             <input type="hidden" id="type" name="type" value="2" class="ajaxField">
-        </div>
+        </form>
     </div>
 </div>
 
@@ -121,51 +119,52 @@
         </div>
     </div>
 </section>
-<section id="download" class="parallax" style="background-image: url(assets/images/_download-bg.jpg);">
-    <div class="container">
-        <h4 class="yellow">Get More Benefits</h4>
-        <h2 class="h1">Download The App</h2>
-        <div class="row">
-            <div class="col-md-4 col-sm-12">
-                <div class="items row">
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">01.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Fast booking</h5>
-                        <p>Nam ac ligula congue, interdum enim sit amet, fermentum nisi.</p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">02.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Easy to use</h5>
-                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 col-md-push-4 col-sm-12">
-                <div class="items items-right row">
-                    <div class="col-md-10">
-                        <h5 class="yellow">GPS searching</h5>
-                        <p>Ut elementum tincidunt erat vel ornare. Suspendisse ac felis non diam pretium.</p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">03.</span></div>
-                    <div class="col-md-10">
-                        <h5 class="yellow">Bonuses for ride</h5>
-                        <p>Phasellus l et porta tortor dignissim at. Pellentesque gravida tortor at euismod mollis. </p>
-                    </div>
-                    <div class="col-md-2 visible-md visible-lg"><span class="num">04.</span></div>
-                </div>
-            </div>
-            <div class="col-md-4 col-md-pull-4 col-sm-12">
-                <div class="mob">
-                    <a href="#"><img src="assets/images/_app-google.png" alt="App"></a>
-                    <a href="#"><img src="assets/images/_app-apple.png" alt="App"></a>
-                </div>
-            </div>
-
-        </div>
-    </div>
+<section id="planes-table" class="text-page">
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Column 1</th>
+                <th>Column 2</th>
+                <th>Column 3</th>
+                <th>Column 4</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1.</td>
+                <td>Sample Text 1</td>
+                <td>Sample Text 1</td>
+                <td>Sample Text 1</td>
+                <td>Sample Text 1</td>
+            </tr>
+            <tr>
+                <td>2.</td>
+                <td>Sample Text 2</td>
+                <td>Sample Text 2</td>
+                <td>Sample Text 2</td>
+                <td>Sample Text 2</td>
+            </tr>
+            <tr>
+                <td>3.</td>
+                <td>Sample Text 3</td>
+                <td>Sample Text 3</td>
+                <td>Sample Text 3</td>
+                <td>Sample Text 3</td>
+            </tr>
+            <tr>
+                <td>4.</td>
+                <td>Sample Text 4</td>
+                <td>Sample Text 4</td>
+                <td>Sample Text 4</td>
+                <td>Sample Text 4</td>
+            </tr>
+        </tbody>
+    </table>
 </section>
+
 <section id="car-block">
-    <div class="car-right animation-block"><img src="assets/images/_car-big-side.png" alt="Car"></div>
+    <div class="car-right animation-block"><img src="assets/images/plane-2.png" alt="Car"></div>
     <div class="container">
         <div class="row">
             <div class="col-md-7">
