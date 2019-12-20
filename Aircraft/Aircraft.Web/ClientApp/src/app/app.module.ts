@@ -17,6 +17,7 @@ import { FlyghtsComponent } from './flyghts/flyghts.component';
 import { AddPlaneComponent } from './add-plane/add-plane.component';
 import { AddPlaneService } from './add-plane/add-plane.service';
 import { planesServices } from './planes/plane.service';
+import { FlightsComponent } from './flights/flights.component';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { planesServices } from './planes/plane.service';
     HotPricesComponent,
     FlyghtsComponent,
     AddPlaneComponent,
+    FlightsComponent,
   ],
 
   providers: [registerService,authService ],
