@@ -6,7 +6,7 @@ using DB = PN.Storage.EF.SimpleRepository;
 namespace Aircraft.Web.Controllers
 {
     [Route("api/[controller]")]
-    public class FlightController:Controller
+    public class FlightController : Controller
     {
         [HttpGet("GetFlights")]
         public ActionResult GetFlights()

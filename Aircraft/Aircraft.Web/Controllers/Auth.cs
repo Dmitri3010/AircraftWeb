@@ -75,7 +75,7 @@ namespace Aircraft.Web.Controllers
                 return Ok(new ResponseStatus() {Status = "400", Message = "login or password or name empty"});
             }
 
-            var user = DB.Single<User>(p => p.Login == model.Login || p.FirstName == model.FirstName);
+            var user = DB.Single<User>(p => p.Login == model.Login);
 
             if (user != null)
             {

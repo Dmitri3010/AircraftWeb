@@ -11,7 +11,7 @@ namespace Aircraft.Web.Core.Models
         public string FromCity { get; set; }
         
         [JsonProperty(PropertyName = "cost")]
-        public double Cost { get; set; }
+        public string Cost { get; set; }
         
         [JsonProperty(PropertyName = "time")]
         public string Time { get; set; }

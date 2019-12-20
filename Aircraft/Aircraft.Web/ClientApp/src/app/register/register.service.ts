@@ -41,10 +41,7 @@ export class registerService {
 
     register(User: User): Observable<User> {
 
-        this._http.post<User>(this.myAppUrl + this.myApiUrl, JSON.stringify(User), this.httpOptions)
-            .subscribe();
-
-        return;
+        return this._http.post<User>(this.myAppUrl + this.myApiUrl, JSON.stringify(User), this.httpOptions);
     }
 }
 

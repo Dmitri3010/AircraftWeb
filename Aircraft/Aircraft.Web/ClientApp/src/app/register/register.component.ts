@@ -5,6 +5,9 @@ import { Observable, throwError } from 'rxjs';
 import { registerService } from '../../app/register/register.service';
 import { FormControl } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import {ResponceModel} from '../../models/responseModel';
+import { Router } from "@angular/router";
+
 
 
 
@@ -17,8 +20,12 @@ export class RegisterComponent implements OnInit {
   User: User;
   registerForm: FormGroup;
   service:registerService;
+  responce:ResponceModel;
+  router: Router;
 
-  constructor(public fb: FormBuilder, service : registerService) {
+
+
+  constructor(public fb: FormBuilder, service : registerService, router: Router) {
     this.registerForm = this.fb.group({
       login: [""],
       password: [""],
@@ -35,6 +42,10 @@ export class RegisterComponent implements OnInit {
 
   }
 
+  navigateToHome() {
+    this.router.navigate(['']);
+  }
+
 
   registration() {
 
@@ -42,7 +53,19 @@ export class RegisterComponent implements OnInit {
     user.email= this.registerForm.get("email").value;
     user.login = this.registerForm.get("password").value;
     user.password =  this.registerForm.get("password").value;
-    this.service.register(user);
+   var login = this.service.register(user);
+    login.subscribe(result =>{
+      var resJson = JSON.stringify(result);
+      this.responce = JSON.parse(resJson);
+      console.log(this.responce.status);
+      if(this.responce.status == '200'){
+        localStorage.setItem("access-token", this.responce.message);
+        this.navigateToHome();
+      }
+      else{
+        document.getElementById('incorrectRegisterText').style.display = "flex";
+      }
+   });
 
   }
 

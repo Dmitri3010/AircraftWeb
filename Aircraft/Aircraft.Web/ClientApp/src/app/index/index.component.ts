@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {IndexServices} from './index.service';
+import { Flight } from 'src/models/Flight';
+
 
 @Component({
   selector: 'app-index',
@@ -7,9 +10,25 @@ import { Component, OnInit } from '@angular/core';
 })
 export class IndexComponent implements OnInit {
 
-  constructor() { }
+  service: IndexServices;
+  public flightsArr: any;
 
-  ngOnInit() {
+
+  constructor(service: IndexServices) {
+    this.service = service;
+    this.flights();
+
+  }
+
+  flights() {
+    let flight = this.service.getFlights();
+    flight.subscribe(result => {
+      this.flightsArr = result as Flight[];
+    });
+  }
+
+  ngOnInit(){
+
   }
 
 }

@@ -1,21 +1,21 @@
 <div class="container">
-    <form [formGroup]="flight" class="form" style="width: 30%;margin-left: 30%;">
+    <form [formGroup]="flightForm" class="form" style="width: 30%;margin-left: 30%;">
         <div class="row">
             <div class="col-md-12">
                 <label>ArrivivalCity<span class="red">*</span></label>
-                <input formControlName="arrivivalCity" type="text" placeholder="model">
+                <input formControlName="arrivivalCity" type="text" placeholder="arrival city">
             </div>
             <div class="col-md-12">
                 <label>FromCity <span class="red">*</span></label>
-                <input type="text" formControlName="fromCity" placeholder="manufacturer">
+                <input type="text" formControlName="fromCity" placeholder="from city">
             </div>
             <div class="col-md-12">
                 <label>Cost <span class="red">*</span></label>
-                <input type="text"  formControlName="cost" placeholder="createdYear">
+                <input type="text"  formControlName="cost" placeholder="cost">
             </div>
             <div class="col-md-12">
                 <label>Time <span class="red">*</span></label>
-                <input type="text"  formControlName="time" placeholder="createdYear">
+                <input type="text"  formControlName="time" placeholder="time">
             </div>
             <div class="col-md-12 aligncenter">
                 <button (click)="addFlight()" class="btn btn-yellow btn-lg">Add flight</button>
