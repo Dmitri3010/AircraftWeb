@@ -5,7 +5,8 @@ import { Observable, throwError } from 'rxjs';
 import { FormControl } from '@angular/forms';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { authService } from './auth.service';
-
+import { Router } from "@angular/router";
+import {ResponceModel} from "../../models/responseModel";
 
 
 @Component({
@@ -17,15 +18,16 @@ export class AuthComponent implements OnInit {
   User: User;
   authForm: FormGroup;
   service: authService;
+  router: Router;
+  responce:ResponceModel;
 
-  constructor(public fb: FormBuilder, @Inject(forwardRef(()=> authService)) service: authService) {
+  constructor(public fb: FormBuilder, @Inject(forwardRef(() => authService)) service: authService, router: Router) {
     this.authForm = this.fb.group({
       login: [""],
       password: [""]
     });
     this.service = service;
-
-
+    this.router = router;
   }
 
 
@@ -34,14 +36,30 @@ export class AuthComponent implements OnInit {
 
   }
 
+  navigateToHome() {
+    this.router.navigate(['']);
+  }
+
 
   auth() {
 
     var user = new User();
     user.login = this.authForm.get("password").value;
     user.password = this.authForm.get("password").value;
-    this.service.auth(user);
-
-  }
+     var login = this.service.auth(user);
+     login.subscribe(result =>{
+        var resJson = JSON.stringify(result);
+        this.responce = JSON.parse(resJson);
+        console.log(this.responce.status);
+        if(this.responce.status == '200'){
+          localStorage.setItem("access-token", this.responce.message);
+          this.navigateToHome();
+        }
+        else{
+          document.getElementById('incorrectLoginText').style.display = "flex";
+        }
+     });
+     
+    }
 
 }

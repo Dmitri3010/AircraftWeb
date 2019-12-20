@@ -2941,6 +2941,37 @@ form input[type="text"]:focus {
     width: 100%;
   }
 }
+
+
+form textarea,
+form input[type="password"] {
+  width: 100%;
+  font-size: 16px;
+  display: block;
+  margin: 0 auto;
+  /*		margin-bottom: 24px;*/
+  background: #fff;
+  padding: 12px 18px;
+  border: 1px solid #E6E6E6;
+  -webkit-border-radius: 3px;
+  -webkit-background-clip: padding-box;
+  -moz-border-radius: 3px;
+  -moz-background-clip: padding;
+  border-radius: 3px;
+  background-clip: padding-box;
+}
+form textarea:focus,
+form input[type="password"]:focus {
+  border-color: #FFC61A;
+}
+@media (max-width: 991px) {
+  form textarea,
+  form input[type="password"] {
+    width: 100%;
+  }
+}
+
+
 form textarea {
   height: 140px;
 }

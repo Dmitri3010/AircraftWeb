@@ -11,6 +11,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { registerService } from './register/register.service';
 import { HttpClientModule } from '@angular/common/http'; 
 import {authService} from './auth/auth.service';
+import { PlanesComponent } from './planes/planes.component';
+import { HotPricesComponent } from './hot-prices/hot-prices.component';
+import { FlyghtsComponent } from './flyghts/flyghts.component';
 
 @NgModule({
   imports: [
@@ -25,6 +28,9 @@ import {authService} from './auth/auth.service';
     IndexComponent,
     AuthComponent,
     RegisterComponent,
+    PlanesComponent,
+    HotPricesComponent,
+    FlyghtsComponent,
   ],
 
   providers: [registerService,authService ],

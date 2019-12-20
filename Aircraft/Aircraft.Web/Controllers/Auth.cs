@@ -6,6 +6,7 @@ using Aircraft.Web.Core.Models.Enums;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
+using Microsoft.VisualBasic;
 using PN.Storage.EF;
 using DB = PN.Storage.EF.SimpleRepository;
 using Hash = PN.Crypt.AES;
@@ -27,18 +28,18 @@ namespace Aircraft.Web.Controllers
         {
             if (string.IsNullOrWhiteSpace(model.Login) || string.IsNullOrWhiteSpace(model.Password))
             {
-                return BadRequest("login or password empty");
+                return Ok(new ResponseStatus() {Status = "400", Message = "login or password empty"});
             }
 
             var loggedUser = DB.Single<User>(u => u.Login.ToLower() == model.Login.ToLower());
             if (loggedUser == null)
             {
-                return Unauthorized();
+                return Ok(new ResponseStatus() {Status = "401", Message = "incorrect login or password"});
             }
 
             if (loggedUser.PasswordHash != Hash.SHA256Hash(model.Password + loggedUser.PasswordSalt))
             {
-                return Unauthorized();
+                return Ok(new ResponseStatus() {Status = "401", Message = "incorrect password"});
             }
 
             var authToken = Token.Create(new TokenClaims
@@ -54,33 +55,33 @@ namespace Aircraft.Web.Controllers
             Response.Headers.Add(AccessToken, authToken);
             Response.Cookies.Append(AccessToken, authToken);
 
-            return authToken;
+            return Ok(new ResponseStatus() {Status = "200", Message = authToken});
         }
 
         [HttpPost("Register")]
-        public ActionResult Register([FromBody]User model)
+        public ActionResult Register([FromBody] User model)
         {
             if (Guid.Empty != model.Id)
             {
-                return BadRequest("wtf?");
+                return Ok(new ResponseStatus() {Status = "400", Message = "login or password or name empty"});
             }
 
             if (!string.IsNullOrWhiteSpace(model.PasswordHash) || !string.IsNullOrWhiteSpace(model.PasswordSalt))
             {
-                return BadRequest("wtf?");
+                return Ok(new ResponseStatus() {Status = "400", Message = "login or password or name empty"});
             }
 
             if (string.IsNullOrWhiteSpace(model.Login) || string.IsNullOrWhiteSpace(model.Password) ||
                 string.IsNullOrWhiteSpace(model.Email))
             {
-                return BadRequest("login or password or name empty");
+                return Ok(new ResponseStatus() {Status = "400", Message = "login or password or name empty"});
             }
 
             var user = DB.Single<User>(p => p.Login == model.Login || p.FirstName == model.FirstName);
 
             if (user != null)
             {
-                return BadRequest("username or login is busy");
+                return Ok(new ResponseStatus() {Status = "400", Message = "username or login is busy"});
             }
 
             model.UserRole = UserRole.User;
@@ -90,13 +91,7 @@ namespace Aircraft.Web.Controllers
 
             model.Upsert();
 
-            return Ok();
+            return Ok(new ResponseStatus() {Status = "200", Message = ""});
         }
-
-//        [HttpOptions("Register")]
-//        public ActionResult Options()
-//        {
-//            return Ok();
-//        }
     }
 }

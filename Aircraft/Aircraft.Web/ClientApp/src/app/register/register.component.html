@@ -7,16 +7,16 @@
             <div class="row form-with-labels">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" formControlName="login" name="login" value="" placeholder="login" class="ajaxField required"
-                            required><span class="fa fa-map-marker"></span>
+                        <input type="text" formControlName="login" name="login" value="" placeholder="login"
+                            class="ajaxField required" required><span class="fa fa-map-marker"></span>
                     </div>
                 </div>
             </div>
             <div class="row form-with-labels">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" name="password" formControlName="password" value=""  placeholder="password" class="ajaxField required"
-                            required><span class="fa fa-phone"></span>
+                        <input type="password" name="password" formControlName="password" value="" placeholder="password"
+                            class="ajaxField required" required><span class="fa fa-phone"></span>
                     </div>
                 </div>
             </div>
@@ -24,16 +24,18 @@
             <div class="row form-with-labels">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" name="email" formControlName="email" value="" placeholder="e-mail" class="ajaxField required"
-                            required><span class="fa fa-inbox"></span>
+                        <input type="text" name="email" formControlName="email" value="" placeholder="e-mail"
+                            class="ajaxField required" required><span class="fa fa-inbox"></span>
                     </div>
                 </div>
             </div>
+            <h5 id="incorrectRegisterText" style="display: none;"> Something went wrong</h5>
 
-            <input type="submit" (click)="registration()" value="Register" class="btn btn-lg btn-black btn-white aligncenter">
+            <input type="submit" (click)="registration()" value="Register"
+                class="btn btn-lg btn-black btn-white aligncenter">
             <input type="hidden" id="type" name="type" value="2" class="ajaxField">
-            <button (click)="register()" [routerLink]="['/auth']" routerLinkActive="router-link-active" class="btn btn-lg btn-black">Have
-                account? Login</button>
+            <button (click)="register()" [routerLink]="['/auth']" routerLinkActive="router-link-active"
+                class="btn btn-lg btn-black">Have account? Login</button>
         </form>
     </div>
 </section>

@@ -15,11 +15,12 @@
             <div class="row form-with-labels">
                 <div class="col-md-12">
                     <div class="form-group">
-                        <input type="text" formControlName="password" name="phone" value="" placeholder="password" class="ajaxField required"
+                        <input type="password" formControlName="password" name="password" value="" placeholder="password" class="ajaxField required"
                             required><span class="fa fa-phone"></span>
                     </div>
                 </div>
             </div>
+            <h5 id="incorrectLoginText" style="display: none;"> Login or password is incorrect</h5>
             <input type="submit" (click)="auth()" value="Login" class="btn btn-lg btn-black btn-white aligncenter">
             <input type="hidden" id="type" name="type" value="2" class="ajaxField">
             <button [routerLink]="['/register']" routerLinkActive="router-link-active"
