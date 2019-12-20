@@ -13,11 +13,11 @@ import { HttpClientModule } from '@angular/common/http';
 import {authService} from './auth/auth.service';
 import { PlanesComponent } from './planes/planes.component';
 import { HotPricesComponent } from './hot-prices/hot-prices.component';
-import { FlyghtsComponent } from './flyghts/flyghts.component';
 import { AddPlaneComponent } from './add-plane/add-plane.component';
 import { AddPlaneService } from './add-plane/add-plane.service';
 import { planesServices } from './planes/plane.service';
 import { FlightsComponent } from './flights/flights.component';
+import { AddFlightComponent } from './add-flight/add-flight.component';
 
 @NgModule({
   imports: [
@@ -34,9 +34,9 @@ import { FlightsComponent } from './flights/flights.component';
     RegisterComponent,
     PlanesComponent,
     HotPricesComponent,
-    FlyghtsComponent,
     AddPlaneComponent,
     FlightsComponent,
+    AddFlightComponent,
   ],
 
   providers: [registerService,authService ],
