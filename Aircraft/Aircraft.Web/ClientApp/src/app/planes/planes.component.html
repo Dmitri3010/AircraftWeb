@@ -1,1 +1,30 @@
-<p>planes works!</p>
+<div class="taxi-form-full">
+    <a href="/addOrUpdatePlane" class="btn btn-black-bordered"> add new Plane</a>
+    <section id="planes-table" class="text-page">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>Model</th>
+                    <th>Manufacture</th>
+                    <th>Created year</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let item of planesArr;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.model}}</td>
+                
+                    <td>{{item.manufacturer}}</td>
+                    <td>{{item.createdYear}}</td>
+                    
+                </tr>
+                <!-- <tr *ngFor="let item of planesArr">
+                    <td>{{item.createdYear}}</td>
+                   
+                </tr>  -->
+            </tbody>
+        </table>
+    </section>
+</div>

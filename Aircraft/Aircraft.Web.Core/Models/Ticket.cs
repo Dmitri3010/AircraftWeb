@@ -7,7 +7,7 @@ namespace Aircraft.Web.Core.Models
     public class Ticket:Base
     {
         [JsonProperty(PropertyName = "orderTime")]
-        public DateTimeOffset OrderTime { get; set; }
+        public string OrderTime { get; set; }
         
         [JsonProperty(PropertyName = "userId")]
         public string UserId { get; set; }

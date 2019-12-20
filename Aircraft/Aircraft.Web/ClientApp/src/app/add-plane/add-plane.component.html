@@ -1,0 +1,21 @@
+<div class="container">
+    <form [formGroup]="planeForm" class="form" style="width: 30%;margin-left: 30%;">
+        <div class="row">
+            <div class="col-md-12">
+                <label>Model<span class="red">*</span></label>
+                <input formControlName="model" type="text" placeholder="model">
+            </div>
+            <div class="col-md-12">
+                <label>Manufacturer <span class="red">*</span></label>
+                <input type="text" formControlName="manufacturer" placeholder="manufacturer">
+            </div>
+            <div class="col-md-12">
+                <label>CreatedYear <span class="red">*</span></label>
+                <input type="text"  formControlName="createdYear" placeholder="createdYear">
+            </div>
+            <div class="col-md-12 aligncenter">
+                <button (click)="addPlane()" class="btn btn-yellow btn-lg">Add plane</button>
+            </div>
+        </div>
+    </form>
+</div>

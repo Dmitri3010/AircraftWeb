@@ -32,7 +32,7 @@ namespace Aircraft.Web.Controllers
                 ArrivivalCity = ticket.ArrivivalCity,
                 Seat = ticket.Seat,
                 FromCity = ticket.FromCity,
-                OrderTime = DateTimeOffset.Now
+                OrderTime = DateTimeOffset.Now.ToString()
 
             };
 
