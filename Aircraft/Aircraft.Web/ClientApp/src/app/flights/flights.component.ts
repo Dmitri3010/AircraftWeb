@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {flightsServices} from "./flights.service"
+import { flightsServices } from "./flights.service"
 import { Flight } from 'src/models/Flight';
 
 @Component({
@@ -12,17 +12,17 @@ export class FlightsComponent implements OnInit {
   public flightsArr: any;
 
 
-  constructor( service: flightsServices) {
+  constructor(service: flightsServices) {
     this.service = service;
     this.flights();
-    
+
   }
 
-  flights(){
+  flights() {
     let flight = this.service.getFlights();
-    flight.subscribe(result=> {
-      this.flightsArr=result as Flight[];
-console.log(this.flightsArr);
+    flight.subscribe(result => {
+      this.flightsArr = result as Flight[];
+      console.log(this.flightsArr);
     });
   }
 

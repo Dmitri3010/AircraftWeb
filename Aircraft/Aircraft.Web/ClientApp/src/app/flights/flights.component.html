@@ -1,1 +1,27 @@
-<p>flights works!</p>
+<div class="taxi-form-full">
+    <a href="/addOrUpdateFlight" class="btn btn-black-bordered"> add new flight</a>
+    <section id="planes-table" class="text-page">
+        <table>
+            <thead>
+                <tr>
+                    <th>#</th>
+                    <th>ArrivivalCity</th>
+                    <th>FromCity</th>
+                    <th>Cost</th>
+                    <th>Time</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <tr *ngFor="let item of flightsArr;let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{item.arrivivalCity}}</td>
+
+                    <td>{{item.аromCity}}</td>
+                    <td>{{item.сost}}</td>
+                    <td>{{item.time}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+</div>
