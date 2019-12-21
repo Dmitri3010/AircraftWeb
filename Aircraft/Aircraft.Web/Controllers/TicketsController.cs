@@ -3,6 +3,8 @@ using Aircraft.Web.Core.Models;
 using DB = PN.Storage.EF.SimpleRepository;
 using Microsoft.AspNetCore.Mvc;
 using System.Linq;
+using MailKit.Net.Smtp;
+using MimeKit;
 
 namespace Aircraft.Web.Controllers
 {
@@ -35,6 +37,25 @@ namespace Aircraft.Web.Controllers
                 OrderTime = DateTimeOffset.Now.ToString()
 
             };
+            var emailMessage = new MimeMessage();
+ 
+            emailMessage.From.Add(new MailboxAddress("Администрация сайта", "login@yandex.ru"));
+            emailMessage.To.Add(new MailboxAddress("", ticket.Email));
+            emailMessage.Subject = "New ticket";
+            emailMessage.Body = new TextPart("dssdsd")
+            
+            {
+                Text = $"You buy a ticket from {tempTicket.FromCity} to {tempTicket.ArrivivalCity}"
+            };
+             
+            using (var client = new SmtpClient())
+            {
+                 client.ConnectAsync("smtp.yandex.ru", 25, false);
+                 client.AuthenticateAsync("dimitri.lol@yandex.ru", "Azaza7788");
+                 client.SendAsync(emailMessage);
+ 
+                 client.DisconnectAsync(true);
+            }
 
             DB.Upsert(tempTicket);
             return Ok();

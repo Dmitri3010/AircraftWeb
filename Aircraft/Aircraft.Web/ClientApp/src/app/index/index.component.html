@@ -9,7 +9,7 @@
 </div>
 <div class="taxi-form-full">
     <div class="container">
-       
+
     </div>
 </div>
 
@@ -49,19 +49,50 @@
         <h2 class="h1">Buy tickets</h2>
         <div class="row">
 
-            <div class="col-md-3 col-sm-6"  *ngFor="let item of flightsArr;let i = index">
-                <div class="item matchHeight">
-                    <div class="image"><img src="assets/images/plane-2.png" class="full-width" alt="Tariff"></div>
-                    <h4>From:{{item.fromCity}} </h4>
-                    <p>To: {{item.arrivivalCity}}</p>
-                    <p>Date:{{item.time}} </p>
+            <div class="col-md-3 col-sm-6" *ngFor="let item of flightsArr;let i = index" id={{item.time}}>
+                <a (click)="buyTicket(item.fromCity, item.arrivivalCity, item.time)">
 
-                    <div class="price">{{item.cost}}</div>
-                </div>
+                    <div class="item matchHeight">
+                        <div class="image"><img src="assets/images/plane-2.png" class="full-width" alt="Tariff"></div>
+                        <h4>From:{{item.fromCity}} </h4>
+                        <p>To: {{item.arrivivalCity}}</p>
+                        <p>Date:{{item.time}} </p>
+
+                        <div class="price">{{item.cost}}</div>
+                    </div>
+                </a>
+
             </div>
-           
+
         </div>
     </div>
+    <form [formGroup]="ticketForm" id="buy" class="form" style="width: 30%;margin-left: 30%; display: none; ">
+        <div class="row">
+            <div class="col-md-12" style="display: none;">
+                <label>ArrivivalCity<span class="red">*</span></label>
+                <input formControlName="arrivivalCity" type="text" placeholder="arrival city">
+            </div>
+            <div class="col-md-12" style="display: none;">
+                <label>FromCity <span class="red">*</span></label>
+                <input id="from" type="text" formControlName="fromCity" placeholder="from city">
+            </div>
+            <div class="col-md-12" style="display: none;">
+                <label>Cost <span class="red">*</span></label>
+                <input id='cost' type="text" formControlName="cost" placeholder="cost">
+            </div>
+            <div class="col-md-12" style="display: none;">
+                <label>Time <span class="red">*</span></label>
+                <input id='time' type="text" formControlName="time" placeholder="time">
+            </div>
+            <div class="col-md-12">
+                <label>Email <span class="red">*</span></label>
+                <input id='email' type="text" formControlName="email" placeholder="your email">
+            </div>
+            <div class="col-md-12 aligncenter">
+                <button (click)="getTicket()" class="btn btn-yellow btn-lg">reserve ticket</button>
+            </div>
+        </div>
+    </form>
 </section>
 
 <section id="car-block">
@@ -90,3 +121,6 @@
         </div>
     </div>
 </section>
+<script>
+
+</script>
